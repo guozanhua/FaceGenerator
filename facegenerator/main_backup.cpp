@@ -40,13 +40,13 @@
 // 顔の合成部分
 #define LOOP_MAX 10000
 //#define EPS 2.2204e-016
-#define EPS 2.2204e-010
+#define EPS 2.2204e-013
 #define NUM_NEIGHBOR 4
 
 //パーツの抽出を大きめに
 #define PARTS_RATE 1.2
 
-const char* inputFileNames[4] = {"/Users/naoto/git/opencv_gl/opencv/mona_lisa.png", "/Users/naoto/git/opencv_gl/opencv/kawagoe.jpg", "/Users/naoto/git/opencv_gl/opencv/horikita.jpg","/Users/naoto/git/opencv_gl/opencv/fukuyama.jpg"};
+const char* inputFileNames[4] = {"/Users/naoto/git/opencv_gl/opencv/mona_lisa.png", "/Users/naoto/git/opencv_gl/opencv/kawagoe.jpg", "/Users/naoto/git/opencv_gl/opencv/horikita.png","/Users/naoto/git/opencv_gl/opencv/fukuyama.jpg"};
 
 //global variable
 int g_display_mode = 0;//0:始動時 1:flatな状態　2:画像選択を受けての反映待ち　3:videoをonにするための待機 4:videoのopen状態(手動キャプチャモード)　 5が画像取得して、合成か再取得かを待ってるモード　6合成開始モード 7 合成終了して、素材をまた選んでね！もしくは再スタートしてね！ってやるモード　8video onのための待機　9(自動キャプチャモード)
@@ -387,9 +387,10 @@ void generate_face(cv::Mat input,cv::Mat dst_img){//in BGR out BGRで書く
     //resizing source image & calc offset
     //ref:http://bicycle.life.coocan.jp/takamints/index.php/doc/opencv/doc/Mat_conversion//
     //http://d.hatena.ne.jp/kamekamekame877/20110621
+    cv::medianBlur(expanded_output(roi_rect2),expanded_output(roi_rect2),23);
+    cv::resize(dst_img,expanded_output,expanded_output.size(),0,0,cv::INTER_LINEAR);
     IplImage buf1=input;//特殊なコピーコンストラクタが呼ばれてるかららしい
     IplImage buf2=mask_img_gray;//同じく
-    cv::medianBlur(expanded_output(roi_rect2),expanded_output(roi_rect2),33);
     IplImage buf3=expanded_output;
     //cv::namedWindow("input",1);
     //cv::imshow("input",input);
@@ -412,6 +413,7 @@ void generate_face(cv::Mat input,cv::Mat dst_img){//in BGR out BGRで書く
     cv::Mat hoge;
     hoge.create(TEXTURE_HEIGHT, TEXTURE_WIDTH, CV_8UC3);
     cv::resize(mat2, hoge,hoge.size());
+    cv::medianBlur(hoge,hoge,3);
     generated=hoge.clone();
     //後始末について
     //cvReleaseImage(&im_src);
@@ -800,7 +802,7 @@ void glut_idle(){
                 int a = (int)(hsv_img.step*y+(x*3));
                 //http://momiage.net/5-meisai.shtml
                 //V:明度も調整。255=白っぽいほう、0＝暗っぽい方
-                if(hsv_img.data[a] >=0 && hsv_img.data[a] <=20 &&hsv_img.data[a+1] >=50 && hsv_img.data[a+2] >= 70
+                if(hsv_img.data[a] >=5 && hsv_img.data[a] <=25 &&hsv_img.data[a+1] >=50 && hsv_img.data[a+2] >= 70
                    &&hsv_img.data[a+2]<=200){hsv_skin_img.data[a] = 255;}
             }
         }

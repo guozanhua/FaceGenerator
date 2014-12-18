@@ -59,16 +59,24 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/naoto/git/opencv_gl/opencv/jojo.jpg"
+            argument = "/Users/naoto/git_new/Facegenerator/resources/sanui.png"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/naoto/git/opencv_gl/opencv/mona_lisa.png"
+            argument = "/Users/naoto/git_new/Facegenerator/resources/mona_lisa.png"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/naoto/git/opencv_gl/opencv/generated.jpg"
+            argument = "/Users/naoto/git_new/Facegenerator/resources/generated.jpg"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "0"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "0"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

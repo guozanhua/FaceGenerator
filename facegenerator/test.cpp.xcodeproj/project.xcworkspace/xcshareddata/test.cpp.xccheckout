@@ -10,31 +10,31 @@
 	<string>test.cpp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D4CA01B340CBA98A3708DFE9F3D39E02CB574345</key>
-		<string>https://github.com/naoto0804/repository1.git</string>
+		<key>D8808DA4FBBFBE9D873FDF62F419E4BCE753C8A5</key>
+		<string>https://github.com/naoto0804/FaceGenerator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>opencv_gl/opencv/test.cpp/test.cpp.xcodeproj</string>
+	<string>facegenerator/test.cpp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D4CA01B340CBA98A3708DFE9F3D39E02CB574345</key>
-		<string>../../../../..</string>
+		<key>D8808DA4FBBFBE9D873FDF62F419E4BCE753C8A5</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/naoto0804/repository1.git</string>
+	<string>https://github.com/naoto0804/FaceGenerator.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D4CA01B340CBA98A3708DFE9F3D39E02CB574345</string>
+	<string>D8808DA4FBBFBE9D873FDF62F419E4BCE753C8A5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D4CA01B340CBA98A3708DFE9F3D39E02CB574345</string>
+			<string>D8808DA4FBBFBE9D873FDF62F419E4BCE753C8A5</string>
 			<key>IDESourceControlWCCName</key>
-			<string>git</string>
+			<string>FaceGenerator</string>
 		</dict>
 	</array>
 </dict>
